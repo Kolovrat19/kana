@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+Copyright (C) 2009/2010/2011 Ulrich Apel.
+This work is distributed under the conditions of the Creative Commons
+Attribution-Share Alike 3.0 Licence. This means you are free:
+* to Share - to copy, distribute and transmit the work
+* to Remix - to adapt the work
+
+Under the following conditions:
+* Attribution. You must attribute the work by stating your use of KanjiVG in
+  your own copyright header and linking to KanjiVG's website
+  (http://kanjivg.tagaini.net)
+* Share Alike. If you alter, transform, or build upon this work, you may
+  distribute the resulting work only under the same or similar license to this
+  one.
+
+See http://creativecommons.org/licenses/by-sa/3.0/ for more details.
+-->
+
+<svg
+   width="109"
+   height="109"
+   viewBox="0 0 109 109"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="224.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="7.0091743"
+     inkscape:cx="54.428665"
+     inkscape:cy="54.5"
+     inkscape:window-width="2491"
+     inkscape:window-height="1057"
+     inkscape:window-x="61"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="kvg:030ce" />
+  <g
+     id="kvg:StrokePaths_030ce"
+     style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;">
+    <g
+       id="kvg:030ce">
+      <path
+         id="kvg:030ce-s1"
+         d="M 72.37 25.25 C 73.12 27.25 73.29 30.14 72.62 32.5 C 71.7782 35.4556 70.7808 38.3379 69.646 41.1428 C 68.4959 43.9858 67.2048 46.7494 65.7918 49.4295 C 64.3622 52.1412 62.808 54.7674 61.1489 57.3039 C 59.4701 59.8704 57.6841 62.3451 55.8114 64.7236 C 53.9106 67.1378 51.9205 69.4528 49.8626 71.6642 C 47.763 73.9203 45.5929 76.0686 43.3752 78.104 C 41.0944 80.1973 38.7633 82.1713 36.4066 84.0207 C 33.956 85.9438 31.4778 87.7322 29 89.38" />
+    </g>
+  </g>
+  <g
+     id="kvg:StrokeNumbers_030ce"
+     style="font-size:8;fill:#808080">
+    <text
+       transform="matrix(1 0 0 1 63.5 24.25)"
+       id="text5">1</text>
+  </g>
+</svg>
