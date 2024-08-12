@@ -1,14 +1,16 @@
 import 'dart:async';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kana/main.dart';
 import 'package:kana/screens/draw_kana_screen.dart';
 import 'package:kana/screens/home_screen.dart';
+import 'package:kana/screens/login_screen.dart';
+import 'package:kana/screens/signup_screen.dart';
+import 'package:kana/screens/splash_screen.dart';
+import 'package:kana/screens/start_screen.dart';
 
 enum Routes {
   splash('/splash'),
+  start('/start'),
   loading('/loading'),
   login('/login'),
   signup('/signup'),
@@ -31,9 +33,29 @@ class AppRouter {
     initialLocation: Routes.home.path,
     routes: [
       GoRoute(
+        path: Routes.splash.path,
+        name: Routes.splash.name,
+        builder: (context, state) => const SplashScreen(),
+      ),
+      GoRoute(
+        path: Routes.start.path,
+        name: Routes.start.name,
+        builder: (context, state) => const StartScreen(),
+      ),
+            GoRoute(
+        path: Routes.signup.path,
+        name: Routes.signup.name,
+        builder: (context, state) => const SignupScreen(),
+      ),
+                  GoRoute(
+        path: Routes.login.path,
+        name: Routes.login.name,
+        builder: (context, state) => const LoginScreen(),
+      ),
+      GoRoute(
         path: Routes.home.path,
         name: Routes.home.name,
-        builder: (context, state) => const HomePage(title: 'Kana'),
+        builder: (context, state) => const HomeScreen(title: 'Kana'),
       ),
       GoRoute(
         path: Routes.draw.path,

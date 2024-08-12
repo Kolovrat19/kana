@@ -3,7 +3,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:kana/mixins/text_to_speech_mixin.dart';
-import 'package:kana/models/kana_model.dart';
 import 'package:kana/models/point_model.dart';
 import 'package:kana/models/triangle_point_model.dart';
 import 'package:kana/services/stroke_reducer_service.dart';
@@ -11,14 +10,10 @@ import 'package:kana/services/stroke_reducer_service.dart';
 class KanaControler with TextToSpeechMixin {
   KanaControler() {
     _strokeReducer = StrokeReducerService(limitPointsToReduce: 20);
-    // _repository = KanaRepository();
-    // kanaToWrite = _repository.getRandomKana();Kana('あ', 3);
-    kanaToWrite = Kana('あ', 3);
     // initTts();
   }
 
   late final StrokeReducerService _strokeReducer;
-  // late final IKanaRepository _repository;
 
   double startSquareLimit = 0.0;
   double endSquareLimit = 100.0;
@@ -27,11 +22,10 @@ class KanaControler with TextToSpeechMixin {
 
   List<List<Offset>> strokes = [];
   List<List<Offset>> controlPoints = [];
-  late Kana kanaToWrite;
+
 
   void addStroke(List<Offset> stroke) {
     strokes.add(_strokeReducer.reduce(stroke));
-    // strokes.add(stroke);
   }
 
   void addControlPoints(List<List<Offset>> points) {
@@ -50,7 +44,7 @@ class KanaControler with TextToSpeechMixin {
 
   bool get isTheLastStroke => strokes.length >= controlPoints.length;
 
-  String get showMessageTop => 'Write: ${kanaToWrite.id}';
+  String get showMessageTop => 'Write: ';
 
   String get showMessageBottom => _isCorrect
       ? 'Wrote correct: $_charWrote'
@@ -112,8 +106,6 @@ class KanaControler with TextToSpeechMixin {
         (semiPerimeter - sideCA) *
         (semiPerimeter - sideBC));
     double triangleHeigth = (2 * triangleSQRT) / sideBC;
-
-    // print([sideAB, sideCA, sideBC]);
     print('RES: ${triangleHeigth}');
     return triangleHeigth;
   }

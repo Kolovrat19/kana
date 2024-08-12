@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kana/controllers/home_controller.dart';
+import 'package:kana/controllers/kana_controller.dart';
 
 class StrokeProvider extends ChangeNotifier {
   StrokeProvider(this._kanaControler);
@@ -21,7 +21,6 @@ class StrokeProvider extends ChangeNotifier {
   }
 
   void addPoint(Offset point) {
-    // print('POINT: ${point}');
     if (_startSquareLimit < point.dx &&
         point.dx < _endSquareLimit &&
         _startSquareLimit < point.dy &&

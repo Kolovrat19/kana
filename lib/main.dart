@@ -3,11 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kana/components/grey_inner_box.dart';
 import 'package:kana/components/white_box.dart';
-import 'package:kana/controllers/home_controller.dart';
+import 'package:kana/controllers/kana_controller.dart';
 import 'package:kana/providers/message_provider.dart';
 import 'package:kana/providers/stroke_provider.dart';
 import 'package:kana/router.dart';
 import 'package:kana/screens/home_screen.dart';
+import 'package:kana/style/theme.dart';
 import 'package:kana/utils/constants.dart';
 import 'package:provider/provider.dart';
 
@@ -38,11 +39,7 @@ class _KanaAppState extends State<KanaApp> {
       child: MaterialApp.router(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          fontFamily: Constants.circularFontFamily,
-          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        theme: theme,
         routerConfig: appRouter.router,
       ),
     );

@@ -3,30 +3,34 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kana/components/grey_inner_box.dart';
+import 'package:kana/components/parallax_bg.dart';
 import 'package:kana/components/white_box.dart';
 import 'package:kana/router.dart';
+import 'package:kana/screens/learn_screen.dart';
 import 'package:kana/utils/constants.dart';
+import 'package:flame/game.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key, required this.title});
 
   final String title;
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
-class _HomePageState extends State<HomePage> {
+
+class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   final double _iconSize = 28.0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static final List<Widget> _widgetOptions = [
-   const WtiteBox(
+    
+    const WtiteBox(
       boxHeight: 300.0,
       innerCenterWidget: GreyInnerBox(
         char: 'ひらがな',
       ),
     ),
+    const LearnScreen(),
     TextButton(
       child: const Text('Go'),
       onPressed: () {
@@ -37,10 +41,6 @@ class _HomePageState extends State<HomePage> {
           },
         );
       },
-    ),
-    const Text(
-      'Index 2: School',
-      style: optionStyle,
     ),
   ];
 
@@ -80,21 +80,15 @@ class _HomePageState extends State<HomePage> {
           TextButton(
             child: const Text('Go'),
             onPressed: () {
-              context.go(Routes.draw.path);
+              context.go(Routes.start.path);
             },
           ),
         ],
       ),
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 120,
-          ),
-          Center(
-            child: _widgetOptions.elementAt(_selectedIndex),
-          ),
-        ],
+      body: 
+      Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
       ),
       // extendBody: true,
       bottomNavigationBar: Container(

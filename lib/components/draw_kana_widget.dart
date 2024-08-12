@@ -55,9 +55,6 @@ class _DrawKanaState extends State<DrawKanaWidget>
   double drawKanaSize = 0;
   List<List<Offset>> controlPoints = [];
 
-    StreamController<DrawnLine> currentLineStreamController =
-      StreamController<DrawnLine>.broadcast();
-
   @override
   void initState() {
     super.initState();
@@ -159,30 +156,27 @@ class _DrawKanaState extends State<DrawKanaWidget>
       DragStartDetails details, BuildContext context, double size) {
     // _animationController.reset();
     // _animationController.stop();
-    final strokeProvider =
-        Provider.of<StrokeProvider>(context, listen: false);
+    final strokeProvider = Provider.of<StrokeProvider>(context, listen: false);
+    strokeProvider.resetPoints();
     // currentStrokeProvider.setLimit(paddingForWriter, size - paddingForWriter);
     strokeProvider.setLimit(0, size);
     strokeProvider.addPoint(details.localPosition);
   }
 
   void _updateStroke(DragUpdateDetails details, BuildContext context) {
-    final strokeProvider =
-        Provider.of<StrokeProvider>(context, listen: false);
+    final strokeProvider = Provider.of<StrokeProvider>(context, listen: false);
     strokeProvider.addPoint(details.localPosition);
   }
 
-  void _finishStroke(BuildContext context)  {
-    final strokeProvider =
-        Provider.of<StrokeProvider>(context, listen: false);
+  void _finishStroke(BuildContext context) {
+    final strokeProvider = Provider.of<StrokeProvider>(context, listen: false);
     final messageProvider =
         Provider.of<MessageProvider>(context, listen: false);
     strokeProvider.addControlPoints(controlPoints);
-   strokeProvider.addStroke(strokeProvider.points);
+    strokeProvider.addStroke(strokeProvider.points);
 
     //  currentStrokeProvider.resetPoints();
-   
-   
+
     if (messageProvider.isTheLastStroke) {
       messageProvider.updateMessage();
     }
