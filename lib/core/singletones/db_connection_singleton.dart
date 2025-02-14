@@ -1,6 +1,5 @@
 import 'package:appwrite/appwrite.dart';
-import 'package:kana/utils/constants.dart';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class DBConectionSingleton {
   DBConectionSingleton._internal();
@@ -39,9 +38,9 @@ class DBConectionSingleton {
   Client getClient() {
     Client client = Client();
     Client getClient = client
-        .setEndpoint(Constants.appServerUrl)
-        .setProject(Constants.projectId)
-        .setSelfSigned();
+        .setEndpoint(dotenv.get('APPWRITE_ENDPOINT'))
+        .setProject(dotenv.get('APPWRITE_PROJECT_ID'))
+        .setSelfSigned(status: true);
     return getClient;
   }
 }

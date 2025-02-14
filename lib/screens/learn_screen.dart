@@ -1,7 +1,7 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kana/components/parallax_bg.dart';
+import 'package:gaijingo/components/parallax_bg.dart';
 
 class LearnScreen extends StatefulWidget {
   const LearnScreen({super.key});

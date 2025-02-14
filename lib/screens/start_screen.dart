@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kana/components/button_widget.dart';
-import 'package:kana/router.dart';
-import 'package:kana/utils/constants.dart';
+import 'package:gaijingo/components/button_widget.dart';
+import 'package:gaijingo/router.dart';
+import 'package:gaijingo/utils/constants.dart';
 
 class StartScreen extends StatefulWidget {
   const StartScreen({super.key});

@@ -2,10 +2,10 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:kana/mixins/text_to_speech_mixin.dart';
-import 'package:kana/models/point_model.dart';
-import 'package:kana/models/triangle_point_model.dart';
-import 'package:kana/services/stroke_reducer_service.dart';
+import 'package:gaijingo/mixins/text_to_speech_mixin.dart';
+import 'package:gaijingo/models/point_model.dart';
+import 'package:gaijingo/models/triangle_point_model.dart';
+import 'package:gaijingo/services/stroke_reducer_service.dart';
 
 class KanaControler with TextToSpeechMixin {
   KanaControler() {
@@ -22,7 +22,6 @@ class KanaControler with TextToSpeechMixin {
 
   List<List<Offset>> strokes = [];
   List<List<Offset>> controlPoints = [];
-
 
   void addStroke(List<Offset> stroke) {
     strokes.add(_strokeReducer.reduce(stroke));

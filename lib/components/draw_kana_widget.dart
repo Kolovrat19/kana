@@ -2,15 +2,15 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:kana/painters/all_stroke_painter.dart';
-import 'package:kana/painters/current_stroke_painter.dart';
-import 'package:kana/painters/kana_box_border_painter.dart';
-import 'package:kana/painters/svg_painter/svg_kana_helper.dart';
-import 'package:kana/painters/svg_painter/svg_kana_painter.dart';
-import 'package:kana/painters/svg_painter/svg_kana_parser.dart';
-import 'package:kana/providers/message_provider.dart';
-import 'package:kana/providers/stroke_provider.dart';
-import 'package:kana/utils/constants.dart';
+import 'package:gaijingo/painters/all_stroke_painter.dart';
+import 'package:gaijingo/painters/current_stroke_painter.dart';
+import 'package:gaijingo/painters/kana_box_border_painter.dart';
+import 'package:gaijingo/painters/svg_painter/svg_kana_helper.dart';
+import 'package:gaijingo/painters/svg_painter/svg_kana_painter.dart';
+import 'package:gaijingo/painters/svg_painter/svg_kana_parser.dart';
+import 'package:gaijingo/providers/message_provider.dart';
+import 'package:gaijingo/providers/stroke_provider.dart';
+import 'package:gaijingo/utils/constants.dart';
 import 'package:provider/provider.dart';
 
 class DrawKanaWidget extends StatefulWidget {

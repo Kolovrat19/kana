@@ -1,7 +1,7 @@
 import 'dart:math' as math show sqrt, max, pi, tan, sin, cos, pow, atan2;
 import 'dart:ui';
 
-import 'package:kana/utils/svg/path_segment_type.dart';
+import 'package:gaijingo/utils/svg/path_segment_type.dart';
 import 'package:meta/meta.dart';
 import 'package:vector_math/vector_math.dart' show Matrix4, radians;
 

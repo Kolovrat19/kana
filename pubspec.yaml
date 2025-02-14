@@ -1,4 +1,4 @@
-name: kana
+name: gaijingo
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -34,10 +34,12 @@ dependencies:
   formz: ^0.7.0
   flutter_tts: ^4.0.2
   flame: ^1.18.0
+  overlay_loading_progress: ^1.0.1
   
   # Dependencies For the path parser
   meta: ^1.12.0
   vector_math: ^2.1.4
+  flutter_dotenv: ^5.1.0
   
 
 dev_dependencies:
@@ -64,6 +66,7 @@ flutter:
     - assets/icons/
     - assets/voices/
     - assets/data/
+    - .env
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

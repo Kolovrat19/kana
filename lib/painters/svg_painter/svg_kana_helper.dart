@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:kana/painters/svg_painter/svg_kana_painter.dart';
-import 'package:kana/painters/svg_painter/svg_kana_parser.dart';
+import 'package:gaijingo/painters/svg_painter/svg_kana_painter.dart';
+import 'package:gaijingo/painters/svg_painter/svg_kana_parser.dart';
 
 class SvgKanaHelper {
   static Rect calculateBoundingBox(

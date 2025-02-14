@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  // DATABASE
-  static const String projectId = "66712c6d00097c0bbf72";
-  static const String appServerUrl = "https://cloud.appwrite.io/v1";
-
-  static const String databaseId = "66b351f8001a64e0b6d8";
-  // static const String bucket = "autobuyer_bucket";
-  // static const String lotsCollection = "lots";
-  static const String usersCollection = "66b3522a000657411e4e";
-
-
   // FONT FAMILY
   static const String circularFontFamily = 'Circular';
 
@@ -33,12 +23,15 @@ class Constants {
   static const Color lightGrey = Color(0xFFEEF0F7);
   static const Color pinkColor = Color(0xFF7D7EFF);
   static const Color titleFontColor = Color(0xFF686C80);
+  static const Color snackbarColor = Color(0xFFDEE3F4);
   static const Color buttonColor = Color(0xFF8B8FA4);
-    static WidgetStateProperty<Color> mainButtonMaterialColor =
+  static WidgetStateProperty<Color> mainButtonMaterialColor =
       WidgetStateProperty.all<Color>(buttonColor);
 
   // ##################### KANA #######################
   static const Color backgroundKanaColor = Color(0xFFEEF0F7);
   static const Color mainHiraganaColor = Color(0xFF525F7F);
 
+  // ##################### LOCAL STORAGE KEYS #######################
+  static const USER_STORAGE = 'user_storage';
 }

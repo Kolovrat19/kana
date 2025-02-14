@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kana/utils/constants.dart';
+import 'package:gaijingo/utils/constants.dart';
 
 class KanaBoxBorderPainter extends CustomPainter {
   // ========  ========  ========  ========  ========
@@ -30,18 +30,26 @@ class KanaBoxBorderPainter extends CustomPainter {
 
     final paintDashed = _getPaintLine(size, 0.003);
 
-    final verticalDashSize = size.height / (spaceQuantity * spaceRatio + spaceQuantity + 1);
+    final verticalDashSize =
+        size.height / (spaceQuantity * spaceRatio + spaceQuantity + 1);
     for (var i = 0; i < spaceQuantity + 1; i++) {
-      final initPosition = i.toDouble() * verticalDashSize + i.toDouble() * verticalDashSize * spaceRatio;
-      final endPosition = (i.toDouble() + 1) * verticalDashSize + i.toDouble() * verticalDashSize * spaceRatio;
-      canvas.drawLine(Offset(size.width / 2, initPosition), Offset(size.width / 2, endPosition), paintDashed);
+      final initPosition = i.toDouble() * verticalDashSize +
+          i.toDouble() * verticalDashSize * spaceRatio;
+      final endPosition = (i.toDouble() + 1) * verticalDashSize +
+          i.toDouble() * verticalDashSize * spaceRatio;
+      canvas.drawLine(Offset(size.width / 2, initPosition),
+          Offset(size.width / 2, endPosition), paintDashed);
     }
 
-    final horizontalDashSize = size.width / (spaceQuantity * spaceRatio + spaceQuantity + 1);
+    final horizontalDashSize =
+        size.width / (spaceQuantity * spaceRatio + spaceQuantity + 1);
     for (var i = 0; i < spaceQuantity + 1; i++) {
-      final initPosition = i.toDouble() * horizontalDashSize + i.toDouble() * horizontalDashSize * spaceRatio;
-      final endPosition = (i.toDouble() + 1) * horizontalDashSize + i.toDouble() * horizontalDashSize * spaceRatio;
-      canvas.drawLine(Offset(initPosition, size.height / 2), Offset(endPosition, size.height / 2), paintDashed);
+      final initPosition = i.toDouble() * horizontalDashSize +
+          i.toDouble() * horizontalDashSize * spaceRatio;
+      final endPosition = (i.toDouble() + 1) * horizontalDashSize +
+          i.toDouble() * horizontalDashSize * spaceRatio;
+      canvas.drawLine(Offset(initPosition, size.height / 2),
+          Offset(endPosition, size.height / 2), paintDashed);
     }
   }
 

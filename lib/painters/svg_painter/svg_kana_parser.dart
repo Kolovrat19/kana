@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kana/utils/svg/path_parsing.dart';
+import 'package:gaijingo/utils/svg/path_parsing.dart';
 import 'package:xml/xml.dart' as xml;
 
 class SvgParser {

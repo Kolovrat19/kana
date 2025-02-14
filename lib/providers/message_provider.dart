@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:kana/controllers/kana_controller.dart';
-
+import 'package:gaijingo/controllers/kana_controller.dart';
 
 class MessageProvider extends ChangeNotifier {
   MessageProvider(this._kanaControler);

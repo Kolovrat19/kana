@@ -1,6 +1,6 @@
 import 'dart:ui';
-import 'package:kana/painters/svg_painter/svg_kana_parser.dart';
-import 'package:kana/utils/svg/path_parsing.dart';
+import 'package:gaijingo/painters/svg_painter/svg_kana_parser.dart';
+import 'package:gaijingo/utils/svg/path_parsing.dart';
 import 'package:xml/xml.dart' as xml;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -46,7 +46,7 @@ class _TestWidgetState extends State<TestWidget> {
     return Scaffold(
       body: CustomPaint(
         isComplex: true,
-        painter: TextPainter(path,controlPoints),
+        painter: TextPainter(path, controlPoints),
       ),
     );
   }
@@ -64,7 +64,7 @@ class TextPainter extends CustomPainter {
       ..strokeWidth = 2.0
       ..style = PaintingStyle.stroke
       ..color = Colors.blue;
-          final controlPaint = Paint()
+    final controlPaint = Paint()
       ..strokeWidth = 2.0
       ..style = PaintingStyle.stroke
       ..color = Colors.red;

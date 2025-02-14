@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kana/controllers/kana_controller.dart';
+import 'package:gaijingo/controllers/kana_controller.dart';
 
 class StrokeProvider extends ChangeNotifier {
   StrokeProvider(this._kanaControler);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kana/utils/constants.dart';
+import 'package:gaijingo/utils/constants.dart';
 
 class InputTextWidget extends StatefulWidget {
   final TextEditingController? controller;
@@ -62,18 +62,6 @@ class _InputTextWidgetState extends State<InputTextWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 4.0),
-          child: Text(
-            widget.labelText,
-            style: const TextStyle(
-              fontSize: Constants.fontSize16,
-              color: Constants.titleFontColor,
-              fontFamily: Constants.circularFontFamily,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
         TextField(
           focusNode: widget.focusNode,
           autocorrect: false,
@@ -84,11 +72,10 @@ class _InputTextWidgetState extends State<InputTextWidget> {
               ? TextCapitalization.words
               : TextCapitalization.none,
           decoration: InputDecoration(
-            errorStyle: TextStyle(
+            errorStyle: const TextStyle(
               // color: Constants.inputErrorMessageColor,
               fontSize: Constants.fontSize14,
-              fontWeight: FontWeight.w600,
-              height: 1.5,
+              fontWeight: FontWeight.w400,
             ),
             enabled: widget.isEnable,
             // fillColor: widget.canValidate
@@ -131,9 +118,11 @@ class _InputTextWidgetState extends State<InputTextWidget> {
             helperText: widget.helperText,
             errorText: widget.errorText,
             hintText: widget.hintText,
-            labelStyle: TextStyle(
-                color: Colors.blue,
-                ),
+            labelStyle: const TextStyle(
+              fontFamily: Constants.circularFontFamily,
+              fontSize: Constants.fontSize16,
+              color: Constants.titleFontColor,
+            ),
           ),
           onChanged: ((text) {
             widget.onChanged(text);

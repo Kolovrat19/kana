@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:kana/utils/constants.dart';
+import 'package:gaijingo/utils/constants.dart';
 
 class ButtonWidget extends StatelessWidget {
   final String title;
@@ -39,18 +38,18 @@ class ButtonWidget extends StatelessWidget {
       width: double.infinity,
       child: TextButton(
         onPressed: () {
-           onPressed(true);
+          onPressed(true);
         },
-          child: Text(
-            title,
-            style: const TextStyle(
-              leadingDistribution: TextLeadingDistribution.even,
-              height: 1.5,
-              fontFamily: Constants.circularFontFamily,
-              fontSize: Constants.fontSize20,
-              fontWeight: FontWeight.w600,
-            ),
+        child: Text(
+          title,
+          style: const TextStyle(
+            leadingDistribution: TextLeadingDistribution.even,
+            height: 1.5,
+            fontFamily: Constants.circularFontFamily,
+            fontSize: Constants.fontSize20,
+            fontWeight: FontWeight.w600,
           ),
+        ),
       ),
     );
   }

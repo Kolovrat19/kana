@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kana/utils/constants.dart';
+import 'package:gaijingo/utils/constants.dart';
 
 final theme = ThemeData(
   useMaterial3: true,
@@ -19,7 +19,7 @@ final theme = ThemeData(
     ),
   ),
   textSelectionTheme: const TextSelectionThemeData(
-    cursorColor: Colors.white,
+    cursorColor: Constants.titleFontColor,
   ),
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: const TextStyle(color: Color(0XFF0F2042)),
@@ -39,8 +39,8 @@ final theme = ThemeData(
     fillColor: Colors.white,
     hintStyle: const TextStyle(
       fontFamily: Constants.circularFontFamily,
-      color: Colors.amber,
-      fontWeight: FontWeight.w600,
+      color: Constants.titleFontColor,
+      fontWeight: FontWeight.w400,
     ),
   ),
   outlinedButtonTheme: OutlinedButtonThemeData(

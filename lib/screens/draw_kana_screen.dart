@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kana/components/draw_kana_widget.dart';
-import 'package:kana/utils/constants.dart';
-
+import 'package:gaijingo/components/draw_kana_widget.dart';
+import 'package:gaijingo/utils/constants.dart';
 
 class DrawKanaScreen extends StatefulWidget {
   const DrawKanaScreen({super.key});

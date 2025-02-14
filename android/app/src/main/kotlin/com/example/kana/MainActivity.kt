@@ -1,4 +1,4 @@
-package com.example.kana
+package ua.klapchuk.gaijingo
 
 import io.flutter.embedding.android.FlutterActivity
 

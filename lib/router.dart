@@ -1,17 +1,18 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kana/screens/draw_kana_screen.dart';
-import 'package:kana/screens/home_screen.dart';
-import 'package:kana/screens/login_screen.dart';
-import 'package:kana/screens/signup_screen.dart';
-import 'package:kana/screens/splash_screen.dart';
-import 'package:kana/screens/start_screen.dart';
+import 'package:gaijingo/core/blocs/auth/auth_bloc.dart';
+import 'package:gaijingo/core/blocs/auth/auth_state.dart';
+import 'package:gaijingo/screens/draw_kana_screen.dart';
+import 'package:gaijingo/screens/home_screen.dart';
+import 'package:gaijingo/screens/login_screen.dart';
+import 'package:gaijingo/screens/signup_screen.dart';
+import 'package:gaijingo/screens/splash_screen.dart';
+import 'package:gaijingo/screens/start_screen.dart';
 
 enum Routes {
   splash('/splash'),
   start('/start'),
-  loading('/loading'),
   login('/login'),
   signup('/signup'),
   home('/home'),
@@ -26,11 +27,13 @@ enum Routes {
 
 class AppRouter {
   final GlobalKey<NavigatorState>? navigatorKey;
+  final AuthBloc authBloc;
+  AuthStatus? _previousStatus;
+  AppRouter({required this.authBloc, required this.navigatorKey});
 
-  AppRouter({required this.navigatorKey});
   late final GoRouter router = GoRouter(
     navigatorKey: navigatorKey,
-    initialLocation: Routes.home.path,
+    initialLocation: Routes.splash.path,
     routes: [
       GoRoute(
         path: Routes.splash.path,
@@ -42,12 +45,12 @@ class AppRouter {
         name: Routes.start.name,
         builder: (context, state) => const StartScreen(),
       ),
-            GoRoute(
+      GoRoute(
         path: Routes.signup.path,
         name: Routes.signup.name,
         builder: (context, state) => const SignupScreen(),
       ),
-                  GoRoute(
+      GoRoute(
         path: Routes.login.path,
         name: Routes.login.name,
         builder: (context, state) => const LoginScreen(),
@@ -55,7 +58,7 @@ class AppRouter {
       GoRoute(
         path: Routes.home.path,
         name: Routes.home.name,
-        builder: (context, state) => const HomeScreen(title: 'Kana'),
+        builder: (context, state) => const HomeScreen(title: 'GaijinGo'),
       ),
       GoRoute(
         path: Routes.draw.path,
@@ -63,32 +66,32 @@ class AppRouter {
         builder: (context, state) => const DrawKanaScreen(),
       ),
     ],
-    // refreshListenable: GoRouterRefreshStream(authBloc.stream),
+    refreshListenable: GoRouterRefreshStream(authBloc.stream),
     redirect: (context, state) {
-      // if (authBloc.state.status == _previousStatus) {
-      //   return null;
-      // }
-      // _previousStatus = authBloc.state.status;
+      if (authBloc.state.status == _previousStatus) {
+        return null;
+      }
+      _previousStatus = authBloc.state.status;
       // if (kDebugMode) {
-      //   print('STATE: ${authBloc.state.status}');
+      print('STATE: ${authBloc.state.status}');
       // }
-      // switch (authBloc.state.status) {
-      //   case AuthStatus.logout:
-      //   case AuthStatus.noProtocol:
-      //     return Routes.intro.path;
-      //   case AuthStatus.unauthenticated:
-      //     return Routes.login.path;
-      //   case AuthStatus.authenticated:
-      //     return Routes.home.path;
-      //   case AuthStatus.loading:
-      //     return Routes.loading.path;
-      //   case AuthStatus.error:
-      //   // return Routes.login.path;
-      //   case AuthStatus.initial:
-      //     return Routes.loading.path;
-      //   case AuthStatus.networkError:
-      //     return Routes.networkError.path;
-      // }
+      switch (authBloc.state.status) {
+        case AuthStatus.logout:
+          return Routes.start.path;
+        case AuthStatus.unauthenticated:
+          return Routes.start.path;
+        case AuthStatus.authenticated:
+          return Routes.home.path;
+        // case AuthStatus.loading:
+        //   return Routes.loading.path;
+        case AuthStatus.error:
+        return Routes.login.path;
+        case AuthStatus.initial:
+          return Routes.splash.path;
+        case AuthStatus.networkError:
+        // return Routes.networkError.path;
+      }
+      return null;
     },
   );
 }

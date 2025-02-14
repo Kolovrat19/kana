@@ -1,8 +1,6 @@
-
-import 'package:kana/utils/form_input_validator.dart';
+import 'package:gaijingo/utils/form_input_validator.dart';
 
 class AuthFormValidation {
-
   static bool isValidName(String name) {
     final nameInput = Name.dirty(name);
     return nameInput.isValid;

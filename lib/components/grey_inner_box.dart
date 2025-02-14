@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kana/utils/constants.dart';
+import 'package:gaijingo/utils/constants.dart';
 
 class GreyInnerBox extends StatefulWidget {
   const GreyInnerBox({super.key, required this.char});
